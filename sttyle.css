@@ -1,0 +1,581 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  /* font-family: 'League Spartan', sans-serif; */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-family: "League Spartan", sans-serif;
+}
+nav {
+  box-sizing: border-box;
+  background-color: #111;
+  color: white;
+  padding: 10px;
+}
+
+.navTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  background-color: rgb(88, 92, 92);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.searchInput {
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.searchInput::placeholder {
+  color: lightgray;
+}
+
+.limitedOffer {
+  font-size: 20px;
+  border-bottom: 2px solid green;
+  cursor: pointer;
+}
+
+.navBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuItem {
+  margin-top: 10px;
+  margin-left: 50px;
+  cursor: pointer;
+  color: lightgray;
+}
+
+.slider {
+  /* copy url link for background */
+  background: url("https://th.bing.com/th/id/OIP.OZOTuzuZNroYB4E62PE8wAHaHa?w=128&h=180&c=7&r=0&o=5&pid=1.7");
+  /* search css clip path and set a image are according */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  overflow: hidden;
+}
+
+.sliderWrapper {
+  display: flex;
+  /* because 5 items in slider */
+  width: 500vw;
+  /* take some time to move on  */
+  transition: all 1s ease-in-out;
+}
+
+.sliderItem {
+  /* each slider take 100vw */
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* .sliderBg {
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background-color: yellowgreen;
+
+} */
+.sliderTitle {
+  position: absolute;
+  color: white;
+  top: 10%;
+  right: 10%;
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+}
+.sliderPrice {
+  position: absolute;
+  padding: 2px;
+  color: white;
+  top: 10%;
+  left: 10%;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid gray;
+}
+
+.buyButton {
+  position: absolute;
+  color: white;
+  bottom: 50%;
+  right: 12%;
+  font-size: 30px;
+  font-weight: 900;
+  cursor: pointer;
+  background-color: #111;
+  border: 1px solid gray;
+}
+
+.buyButton:hover,
+.productButton:hover {
+  background-color: white;
+  color: #111;
+}
+
+.features {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 25vw;
+}
+
+.featureIcon {
+  width: 20%;
+  height: 50px;
+}
+
+.featureTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 5vw;
+}
+
+.featureDesc {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 5%;
+}
+
+.product {
+  height: 100vh;
+  background-color: whitesmoke;
+  position: relative;
+  /* search css clip path and set a image are according */
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+}
+
+.productImg {
+  position: absolute;
+  top: 10%;
+  width: 50%;
+}
+
+.productDetails {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 30%;
+}
+
+.productDetails .productTitle {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.productDetails .productPrice {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.sizes,
+.colors {
+  display: flex;
+  justify-content: start;
+  padding: 5px;
+}
+
+.size {
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid gray;
+  padding: 2px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.color {
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #111;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.color:last-child {
+  background-color: rgb(11, 11, 102);
+}
+
+.productButton {
+  background-color: #111;
+  color: white;
+  margin: 2px;
+  cursor: pointer;
+  padding: 5px;
+  font-weight: 500;
+}
+
+.payment {
+  width: 70%;
+  height: 80%;
+  background-color: aliceblue;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding: 10px 15px;
+  /* because when user click on but button then only it show  like pop up  */
+  display: none;
+  flex-direction: column;
+  /* box shadow generator search on google for below  */
+  box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 1);
+  overflow: hidden;
+}
+
+.payTitle,
+.cardIcon {
+  font-size: 20px;
+  color: lightgray;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  font-size: 15px;
+  font-weight: 500;
+  font: bold;
+}
+
+.payInput {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-bottom: 1px solid green;
+}
+
+.payInput::placeholder {
+  color: lightgray;
+}
+
+.cardIcon {
+  width: 50px;
+}
+.cardIcons {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.payInput.sm {
+  width: 6%;
+}
+
+.payButton {
+  position: absolute;
+  width: 30%;
+  height: 40px;
+  bottom: 10px;
+  right: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+.payButton:hover,
+.newSeasonButton:active {
+  background-color: white;
+  color: green;
+  font-weight: 900;
+}
+
+.close {
+  position: absolute;
+  width: 4%;
+  font-size: large;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.gallery {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+}
+
+.newSeason {
+  padding: 0px;
+  display: flex;
+}
+
+.newSeason {
+  background-color: #111;
+  margin: 15px;
+  box-shadow: 3px 10px 54px 23px rgba(97, 92, 92, 0.75);
+}
+
+.galleryItem {
+  flex: 1;
+  padding: 20px;
+}
+
+.newSeasonItem {
+  flex: 1;
+  padding: 0px;
+}
+
+.galleryItem > img,
+.newSeasonItem > img {
+  width: 100%;
+}
+
+.newSeasonItem > h1 {
+  color: white;
+}
+
+.someLine {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+}
+
+.newSeasonItemTitle {
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.newSeasonButton {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  background-color: gray;
+  color: white;
+}
+
+footer {
+  display: flex;
+}
+
+.footerLeft {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.footerRight {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fMenuTitle {
+  font-size: 1rem;
+}
+
+.fMenuList {
+  padding: 0;
+  list-style: none;
+}
+
+.fListItem {
+  color: gray;
+  margin-top: 0.5rem;
+}
+
+.fEmailInput,
+.fJoinButton {
+  padding: 5px;
+}
+
+.fJoinButton {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.fIcons {
+  display: flex;
+}
+
+.fIcon {
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+/* it means from 0 to 480 it works */
+/*hr section ko comment krke 480 ke acc. laoo 
+/* check kro ki overflow na ho or scroll left right na ho */
+@media screen and (max-width: 480px) {
+  nav {
+    padding: 20px;
+  }
+  .search {
+    display: none;
+  }
+  .navBottom {
+    flex-wrap: wrap;
+  }
+  .menuItem {
+    margin-right: 10px;
+  }
+
+  .slider {
+    clip-path: none;
+  }
+
+  .sliderImg {
+    width: 90%;
+  }
+
+  .sliderTitle {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .buyButton {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .sliderPrice {
+    position: absolute;
+    top: unset;
+    bottom: 10%;
+  }
+
+  .features {
+      padding: 0px;
+    flex-wrap: wrap;   
+    justify-content: space-evenly;
+  }
+  .featureTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 2vw;
+  }
+
+  .featureDesc {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 2%;
+  }
+
+  .feature {
+   
+    width:30vw;
+    margin: 2%;
+  }
+
+  .product {
+    height: 70vh;
+  }
+
+  .payment .payTitle{
+    display: none;
+  }
+  .payment .payInput{
+    padding: .4rem;
+  margin: 5px;
+
+  }
+
+  label {
+    font-size: .9rem;
+    font-weight: 400;
+    font: bold;
+  }
+  .payInput .sm {
+    font-size: .5rem;
+  }
+
+  .gallery {
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0px;
+  }
+  .galleryItem{
+    padding: 10px;
+
+  }
+  .galleryTitle{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color:rgb(48, 123, 160)
+  }
+
+  .newSeason{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .newSeasonItemTitle{
+font-size: .8rem;
+
+  }
+.newSeason .imgnewSeason{
+   display:none
+  }
+
+  .newSeasonItemTitle:hover{
+    font-size: 1rem;
+
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .footerRight{
+    background-color:whitesmoke ;
+    align-items: center;
+
+  }
+  .fMenuTitle{
+    text-align: center;
+  }
+ 
+}
+
+
